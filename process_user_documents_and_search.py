@@ -1,9 +1,8 @@
-import json
-import requests
 import pdfplumber
 from pathlib import Path
-from dotenv import load_dotenv
 import os
+from dotenv import load_dotenv
+import requests
 
 # Charger les variables d'environnement depuis le fichier .env
 load_dotenv()
@@ -78,16 +77,16 @@ def extract_fund_name(text):
     return fund_name if fund_name else "Nom du fonds inconnu"
 
 # === Recherche EDGAR ===
-def search_edgar(cik, document_type="10-K"):
-    if not validate_cik(cik):  # Valider le CIK avant la recherche
+def search_edgar(fund_name_or_cik, document_type="10-K"):
+    if not validate_cik(fund_name_or_cik):  # Valider le CIK avant la recherche
         return f"Recherche EDGAR échouée : CIK invalide."
     
-    url = f"{EDGAR_BASE_URL}?action=getcompany&CIK={cik}&type={document_type}&owner=exclude&count=10"
+    url = f"{EDGAR_BASE_URL}?action=getcompany&CIK={fund_name_or_cik}&type={document_type}&owner=exclude&count=10"
     response = requests.get(url)
     if response.status_code == 200:
         return response.text
     else:
-        return f"Erreur EDGAR pour le CIK {cik}."
+        return f"Erreur EDGAR pour le CIK {fund_name_or_cik}."
 
 # === Recherche CoinMarketCap ===
 def search_coinmarketcap(fund_name):
@@ -168,13 +167,3 @@ def search_external_info(fund_name_or_cik):
         
         alpha_vantage_data = search_alpha_vantage(fund_name_or_cik)
         print(f"🔍 Résultats Alpha Vantage :\n{alpha_vantage_data}")
-
-# === Fonction principale du script ===
-if __name__ == "__main__":
-    # Traitement des documents
-    process_user_documents()
-
-    # Recherche externe
-    user_query = input("\nEntrez le CIK ou le nom du fonds pour rechercher des informations externes : ").strip()
-    if user_query:
-        search_external_info(user_query)
