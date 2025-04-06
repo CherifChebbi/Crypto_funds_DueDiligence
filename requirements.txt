@@ -20,3 +20,8 @@ tqdm
 streamlit
 spacy
 python-dotenv
+langchain
+torch 
+phonenumbers
+requests 
+beautifulsoup4

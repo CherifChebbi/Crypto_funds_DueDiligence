@@ -4,6 +4,19 @@ from tqdm import tqdm
 from sentence_transformers import SentenceTransformer
 import faiss
 import numpy as np
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Retrieve the Hugging Face token
+hf_token = os.getenv("huggingface_token")
+if hf_token is None:
+    print("❌ Hugging Face token not found in .env file.")
+    exit(1)
+
+print(f"✅ Hugging Face token loaded successfully.")
 
 # === Configuration générale ===
 MODEL_NAME = "nomic-ai/nomic-embed-text-v1"
@@ -12,7 +25,7 @@ EMBEDDING_DIM = 768
 
 # === Chargement du modèle ===
 print("🔄 Chargement du modèle d'embedding...")
-model = SentenceTransformer(MODEL_NAME)
+model = SentenceTransformer(MODEL_NAME, trust_remote_code=True, use_auth_token=hf_token)
 print(f"✅ Modèle chargé : {MODEL_NAME}")
 
 # === Initialisation de FAISS ===

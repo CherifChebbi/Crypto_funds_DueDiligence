@@ -1,12 +1,25 @@
 {
-    "emails": [],
+    "emails": [
+        "mike.carter@fticonsulting.com",
+        "preston.fischer@fticonsulting.com",
+        "jessica.debrignac@fticonsulting.com",
+        "steve.mcnew@fticonsulting.com",
+        "david.brill@fticonsulting.com"
+    ],
     "urls": [],
     "ciks": [],
+    "phones": [
+        "+1 917-923-3800"
+    ],
+    "amounts": [
+        "$1.2"
+    ],
+    "fund_names": [],
     "dates": [
-        "2025-01-05",
-        "2024-04-05",
-        "2025-04-05",
-        "2005-04-05",
-        "1990-04-05"
+        "2025-01-06",
+        "2005-04-06",
+        "2024-04-06",
+        "1990-04-06",
+        "2025-04-06"
     ]
 }

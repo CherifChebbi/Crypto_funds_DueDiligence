@@ -1,17 +1,29 @@
 {
     "emails": [],
-    "urls": [],
+    "urls": [
+        "https://www.sbai.org/toolbox/alternative-credit/",
+        "https://www.sec.gov/files/digital-assets-risk-alert.pdf",
+        "https://www.pwc.com/gx/en/financial-services/pdf/3rd-annual-pwc-elwood-aima-crypto-hedge-fund-report-",
+        "https://cryptoclimate.org/",
+        "https://web.anchorage.com/anchorage-blocktower-whitepaper/",
+        "https://www.jbs.cam.ac.uk/faculty-research/centres/alternative-finance/publications/3rd-global-cryptoasset-benchmarking-study/",
+        "https://www.sec.gov/news/press-release/2020-338",
+        "https://cryptofundresearch.com/cryptocurrency-funds-overview-infographic/"
+    ],
     "ciks": [],
+    "phones": [],
+    "amounts": [],
+    "fund_names": [],
     "dates": [
-        "2021-05-12",
-        "2020-05-05",
-        "2039-11-12",
-        "2021-05-05",
+        "2021-11-06",
         "2021-11-12",
-        "2021-01-05",
-        "2020-05-13",
+        "2021-01-06",
         "2021-11-13",
-        "2025-04-05",
-        "2021-11-05"
+        "2039-11-12",
+        "2020-05-13",
+        "2021-05-06",
+        "2021-05-12",
+        "2020-05-06",
+        "2025-04-06"
     ]
 }
